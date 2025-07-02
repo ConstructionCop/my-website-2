@@ -1,0 +1,358 @@
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Md';
+  src: url('../fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-Md.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-MdCn';
+  src: url('../fonts/HelveticaNeueLTStd-MdCn.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-MdCn.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Cn';
+  src: url('../fonts/HelveticaNeueLTStd-Cn.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-Cn.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inkt-Regular';
+  src: url('../fonts/Inkt-Regular.woff2') format('woff2'),
+       url('../fonts/Inkt-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.header-button {
+  font-family: 'Inkt-Regular', Arial, sans-serif;
+  padding: 5px 15px;
+  border: 2.5px solid #000;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.header-button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.page-container-top {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+ 
+  gap: 20px;
+  width: 100vw;
+  
+  max-width: none;
+  margin: 0;
+  padding: 30px 30px 0 30px;
+  box-sizing: border-box;
+}
+
+.bio-text {
+  font-family: 'HelveticaNeueLTStd-Md', Arial, sans-serif;
+  grid-column: 2 / span 2;
+  opacity: 0.3;
+  font-size:14px;
+}
+
+.project-type {
+  font-family: 'HelveticaNeueLTStd-MdCn', Arial, sans-serif;
+  grid-column: 7 / span 2;
+  text-align: right;
+  align-self: flex-end;
+  text-transform:uppercase;
+  font-size:48px;
+  line-height: 0px;
+}
+
+.page-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+ 
+  gap: 20px;
+  width: 100vw;
+  
+  max-width: none;
+  margin: 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.slider-container {
+  grid-column: span 4;
+
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Fixed height to contain slides */
+}
+
+.slide {
+  width: 100%; /* Fixed width */
+  height: 100%; /* Full height of slider */
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  opacity: 0; /* Hide all slides by default */
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide.active {
+  opacity: 1; /* Show only the active slide */
+  z-index: 1;
+}
+
+.slide:nth-child(1) {
+  background-image: url('/assets/1.jpg');
+}
+
+.slide:nth-child(2) {
+  background-image: url('/assets/2.jpg');
+}
+
+.slide:nth-child(3) {
+  background-image: url('../assets/1.jpg');
+}
+
+.slide:nth-child(4) {
+  background-image: url('/assets/4.jpg');
+}
+
+.slide:nth-child(5) {
+  background-image: url('/assets/5.jpg');
+}
+
+.navigation-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.navigation-container {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Keeps slide header at bottom */
+  align-items: flex-start;
+  height: 100%; /* Ensure full height */
+}
+
+.slide-title {
+  font-family: 'HelveticaNeueLTStd-MdCn', Arial, sans-serif;
+  text-align: left;
+  font-size: 54px;
+  color: #000;
+  margin: 0;
+  line-height: 1; /* Tight line spacing */
+  width: 100%;
+  display: inline-block;
+  white-space: normal; /* Allow wrapping */
+  word-break: break-word; /* Break long words */
+  text-transform:uppercase;
+}
+
+.slide-number {
+  font-size: 36px;
+  color: #888;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.slide-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.progress-indicators {
+  display: flex;
+  gap: 20px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: none;
+  border: solid 1px;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #000;
+  width:100px;
+  border-radius:1px;
+  transition: all 0.3s ease;
+}
+
+.nav-button {
+  
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-button:hover {
+  color: #666;
+}
+
+
+.page-container-bottom {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+ 
+  gap: 20px;
+  width: 100vw;
+  
+  max-width: none;
+  margin: 0;
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+}
+
+.slide-container {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps slide header at bottom */
+  align-items: flex-start;
+  height: 100%; /* Ensure full height */
+  
+}
+
+.project-title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust this value to increase or decrease the gap */
+}
+
+.slide-action-button {
+  font-family: 'Inkt-Regular', Arial, sans-serif;
+  align-self: flex-start; /* Optional: ensures button aligns to the left */
+  padding: 5px 15px;
+  border: 2.5px solid #000;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.slide-action-button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.project-attributes {
+  grid-column: span 4;
+  display: flex;
+  justify-content: flex-start; /* Distributes space evenly between attributes */
+  gap: 75px; /* Adds space between the attributes */
+}
+
+.attribute {
+  text-align: left;
+  width:100px;
+}
+
+.attribute-title {
+  font-family: 'Inkt-Regular', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.year-description {
+  font-family: 'HelveticaNeueLTStd-Cn', Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+  line-height: 1; /* Adjust line height for better readability */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.client-description {
+  font-family: 'HelveticaNeueLTStd-Cn', Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+  line-height: 1; /* Adjust line height for better readability */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.duty-description {
+  font-family: 'HelveticaNeueLTStd-Cn', Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+  line-height: 1; /* Adjust line height for better readability */
+  letter-spacing: 2px;
+}
+
+.tools-description {
+  font-family: 'HelveticaNeueLTStd-Cn', Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+  line-height: 1; /* Adjust line height for better readability */
+  letter-spacing: 2px;
+}
